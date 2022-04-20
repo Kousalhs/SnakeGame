@@ -2,6 +2,6 @@
 
     public static void main(String[] args) {
 
-        new GameFrame();
+        LaunchPage launchPage = new LaunchPage();
     }
 }
