@@ -6,7 +6,9 @@ public class InstructionsWindow {
     JPanel instructionPanel = new JPanel();
     JFrame frame = new JFrame();
     JLabel instructions = new JLabel(   "<html>Rules: 1. You can play with arrow keys. <br/>"  +
-            "2. Eat as many apples as you can and beware of the borders (!) <br/><br/>"
+            "2. Eat as many apples as you can and beware of the borders (!) <br/>"
+            + "3. Don't press the keys fast when you want to change path<br/> "
+            + "from up to down :)<br/>"
             + "Have fun!</html>");
 
     InstructionsWindow(){
