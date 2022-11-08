@@ -1,3 +1,5 @@
+package src;
+
 import javax.sound.sampled.*;
 import javax.swing.*;
 import java.awt.*;

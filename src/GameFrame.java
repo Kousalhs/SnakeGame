@@ -1,4 +1,6 @@
- import javax.swing.*;
+package src;
+
+import javax.swing.*;
 
  public class GameFrame extends JFrame{
      private JPanel panel;
