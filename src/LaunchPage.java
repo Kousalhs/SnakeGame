@@ -15,11 +15,13 @@ public class LaunchPage implements ActionListener {
 
     LaunchPage(){
         instructionsButton.setText("Instructions");
+        instructionsButton.setFont(FontManager.getCustomizedFont(FontManager.FontStyle.MEDIUM, 24));
         instructionsButton.setBounds(100,160,200,40);
         instructionsButton.setFocusable(false);
         instructionsButton.addActionListener(this);
 
         startButton.setText("Start Game");
+        startButton.setFont(FontManager.getCustomizedFont(FontManager.FontStyle.MEDIUM, 24));
         startButton.setBounds(100,100,200,40);
         startButton.setFocusable(false);
         startButton.addActionListener(this);
@@ -39,7 +41,8 @@ public class LaunchPage implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == instructionsButton){
             InstructionsWindow startWindow = new InstructionsWindow();
-            String soundName = "src/resources/SoundClips/wav2.wav";
+            String soundName = Constants.BUTTON_CLICK_SOUND_CLIP;
+//            String soundName = "src/resources/SoundClips/game_start.wav";
             AudioInputStream audioInputStream = null;
             try {
                 audioInputStream = AudioSystem.getAudioInputStream(new File(soundName).getAbsoluteFile());
@@ -65,7 +68,8 @@ public class LaunchPage implements ActionListener {
 
         if (e.getSource() == startButton) {
             new GameFrame();
-            String soundName = "src/resources/SoundClips/wav2.wav";
+            String soundName = Constants.BUTTON_CLICK_SOUND_CLIP;
+//            String soundName = "src/resources/SoundClips/game_start.wav";
             AudioInputStream audioInputStream = null;
             try {
                 audioInputStream = AudioSystem.getAudioInputStream(new File(soundName).getAbsoluteFile());
