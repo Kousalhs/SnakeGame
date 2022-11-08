@@ -64,7 +64,8 @@ public class GamePanel extends JPanel implements ActionListener {
                     }
                 }
                 g.setColor(Color.red);
-                g.setFont(new Font("Ink Free",Font.BOLD,75));
+                g.setFont(FontManager.getCustomizedFont(FontManager.FontStyle.REGULAR, 75));
+//                g.setFont(new Font("Ink Free",Font.BOLD,75));
                 FontMetrics metrics = getFontMetrics(g.getFont());
                 g.drawString("Score: " + applesEaten, (SCREEN_WIDTH - metrics.stringWidth("Score: " + applesEaten))/2,g.getFont().getSize());
         }
@@ -131,19 +132,22 @@ public class GamePanel extends JPanel implements ActionListener {
     public void gameOver(Graphics g){
         //Game Over text
         g.setColor(Color.red);
-        g.setFont(new Font("Ink Free",Font.BOLD,75));
+        g.setFont(FontManager.getCustomizedFont(FontManager.FontStyle.REGULAR, 75));
+//        g.setFont(new Font("Ink Free",Font.BOLD,75));
         FontMetrics metrics = getFontMetrics(g.getFont());
         g.drawString("Game Over", (SCREEN_WIDTH - metrics.stringWidth("Game Over"))/2,SCREEN_HEIGHT/2);
 
         //Score
         g.setColor(Color.red);
-        g.setFont(new Font("Ink Free",Font.BOLD,75));
+        g.setFont(FontManager.getCustomizedFont(FontManager.FontStyle.REGULAR, 75));
+//        g.setFont(new Font("Ink Free",Font.BOLD,75));
         FontMetrics metrics1 = getFontMetrics(g.getFont());
         g.drawString("Score: " + applesEaten, (SCREEN_WIDTH - metrics1.stringWidth("Score: " + applesEaten))/2,g.getFont().getSize());
 
         //Restart game
         g.setColor(Color.MAGENTA);
-        g.setFont(new Font("Ink Free",Font.BOLD,75));
+        g.setFont(FontManager.getCustomizedFont(FontManager.FontStyle.REGULAR, 75));
+//        g.setFont(new Font("Ink Free",Font.BOLD,75));
         FontMetrics metrics2 = getFontMetrics(g.getFont());
         g.drawString("Press space to restart", (SCREEN_WIDTH - metrics2.stringWidth("Press space to restart"))/4,SCREEN_HEIGHT/3);
 

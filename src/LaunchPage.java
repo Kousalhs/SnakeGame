@@ -39,7 +39,7 @@ public class LaunchPage implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == instructionsButton){
             InstructionsWindow startWindow = new InstructionsWindow();
-            String soundName = "wav2.wav";
+            String soundName = "src/resources/SoundClips/wav2.wav";
             AudioInputStream audioInputStream = null;
             try {
                 audioInputStream = AudioSystem.getAudioInputStream(new File(soundName).getAbsoluteFile());
@@ -65,7 +65,7 @@ public class LaunchPage implements ActionListener {
 
         if (e.getSource() == startButton) {
             new GameFrame();
-            String soundName = "wav2.wav";
+            String soundName = "src/resources/SoundClips/wav2.wav";
             AudioInputStream audioInputStream = null;
             try {
                 audioInputStream = AudioSystem.getAudioInputStream(new File(soundName).getAbsoluteFile());
