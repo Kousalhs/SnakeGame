@@ -83,20 +83,12 @@ public class GamePanel extends JPanel implements ActionListener {
             y[i] = y[i-1];
         }
 
-            switch (direction) {
-                case 'U':
-                    y[0] = y[0] - UNIT_SIZE;
-                    break;
-                case 'D':
-                    y[0] = y[0] + UNIT_SIZE;
-                    break;
-                case 'L':
-                    x[0] = x[0] - UNIT_SIZE;
-                    break;
-                case 'R':
-                    x[0] = x[0] + UNIT_SIZE;
-                    break;
-            }
+        switch (direction) {
+            case 'U' -> y[0] = y[0] - UNIT_SIZE;
+            case 'D' -> y[0] = y[0] + UNIT_SIZE;
+            case 'L' -> x[0] = x[0] - UNIT_SIZE;
+            case 'R' -> x[0] = x[0] + UNIT_SIZE;
+        }
     }
 
     public void checkApple(){
@@ -111,7 +103,10 @@ public class GamePanel extends JPanel implements ActionListener {
     public void checkCollisions(){
         //checks if head collides with body
         for (int i = bodyParts; i>0; i--){
-            if ((x[0] == x[i]) && (y[0] == y[i])) {running = false;}
+            if ((x[0] == x[i]) && (y[0] == y[i])) {
+                running = false;
+                break;
+            }
         }
         //check if head touches left border
         if (x[0] < 0) {running = false;}
