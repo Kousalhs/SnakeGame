@@ -101,6 +101,7 @@ public class GamePanel extends JPanel implements ActionListener {
 
     public void checkApple(){
         if ((x[0] == appleX) && (y[0] == appleY)){
+            SoundManager.playClip("apple_eaten");
             bodyParts++;
             applesEaten++;
             newApple();
@@ -124,7 +125,11 @@ public class GamePanel extends JPanel implements ActionListener {
         //check if head touches bottom border
         if (y[0] > SCREEN_HEIGHT - UNIT_SIZE) {running = false;}
 
-        if (!running) {timer.stop();}
+        if (!running) {
+            timer.stop();
+            SoundManager.stopClip("snake_game_theme");
+            SoundManager.playClip("game_over");
+        }
 
 
     }

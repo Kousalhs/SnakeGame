@@ -6,6 +6,7 @@ import javax.swing.*;
      private JPanel panel;
     GameFrame(){
         panel = new GamePanel(this);
+        SoundManager.playClip("snake_game_theme");
         this.add(panel);
         this.setTitle("Snake Game");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

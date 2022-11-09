@@ -1,12 +1,9 @@
 package src;
 
-import javax.sound.sampled.*;
-import javax.swing.*;
 import java.awt.*;
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
-import java.io.IOException;
 
 public class LaunchPage implements ActionListener {
     JFrame frame = new JFrame();
@@ -40,55 +37,13 @@ public class LaunchPage implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == instructionsButton){
+            SoundManager.playClip("button_clicked");
             InstructionsWindow startWindow = new InstructionsWindow();
-            String soundName = Constants.BUTTON_CLICK_SOUND_CLIP;
-//            String soundName = "src/resources/SoundClips/game_start.wav";
-            AudioInputStream audioInputStream = null;
-            try {
-                audioInputStream = AudioSystem.getAudioInputStream(new File(soundName).getAbsoluteFile());
-            } catch (UnsupportedAudioFileException ex) {
-                ex.printStackTrace();
-            } catch (IOException ex) {
-                ex.printStackTrace();
-            }
-            Clip clip = null;
-            try {
-                clip = AudioSystem.getClip();
-            } catch (LineUnavailableException ex) {
-                ex.printStackTrace();
-            }
-            try {
-                assert clip != null;
-                clip.open(audioInputStream);
-            } catch (LineUnavailableException | IOException ex) {
-                ex.printStackTrace();
-            }
-            clip.start();
         }
 
         if (e.getSource() == startButton) {
+            SoundManager.playClip("button_clicked");
             new GameFrame();
-            String soundName = Constants.BUTTON_CLICK_SOUND_CLIP;
-//            String soundName = "src/resources/SoundClips/game_start.wav";
-            AudioInputStream audioInputStream = null;
-            try {
-                audioInputStream = AudioSystem.getAudioInputStream(new File(soundName).getAbsoluteFile());
-            } catch (UnsupportedAudioFileException | IOException ex) {
-                ex.printStackTrace();
-            }
-            Clip clip = null;
-            try {
-                clip = AudioSystem.getClip();
-            } catch (LineUnavailableException ex) {
-                ex.printStackTrace();
-            }
-            try {
-                assert clip != null;
-                clip.open(audioInputStream);
-            } catch (LineUnavailableException | IOException ex) {
-                ex.printStackTrace();
-            }
-            clip.start();
             frame.dispose();
         }
     }
