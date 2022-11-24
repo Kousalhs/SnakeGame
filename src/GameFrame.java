@@ -1,8 +1,10 @@
 package src;
 
 import javax.swing.*;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
- public class GameFrame extends JFrame{
+public class GameFrame extends JFrame{
      private JPanel panel;
     GameFrame(){
         panel = new GamePanel(this);
@@ -15,4 +17,4 @@ import javax.swing.*;
         this.setVisible(true);
         this.setLocationRelativeTo(null);
     }
-} 
+}
