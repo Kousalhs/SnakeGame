@@ -1,3 +1,5 @@
+package src;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -15,7 +17,8 @@ public class InstructionsWindow {
 
 
         instructions.setBounds(150,0,1000,250);
-        instructions.setFont(new Font(null, Font.PLAIN,20));
+        instructions.setFont(FontManager.getCustomizedFont(FontManager.FontStyle.REGULAR, 24));
+//        instructions.setFont(new Font(null, Font.PLAIN,20));
         frame.add(instructions);
 
         frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
